@@ -91,5 +91,21 @@ class AlarmDetailTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    //MARK: - IBOutlets
+    
+    @IBOutlet weak var enableButton: UIButton!
+    @IBOutlet weak var noteTextField: UITextField!
+    @IBOutlet weak var timeDatePicker: UIDatePicker!
+    
+    
+    //MARK: - IBActions
+    
+    @IBAction func enableButtonTapped(_ sender: Any) {
+    }
+    @IBAction func saveButtonTapped(_ sender: Any) {
+    }
+    
 
 }

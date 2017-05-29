@@ -79,33 +79,117 @@
             </objects>
             <point key="canvasLocation" x="1082.4000000000001" y="148.87556221889056"/>
         </scene>
-        <!--Alarm Detail Table View Controller-->
+        <!--Rise and Shine-->
         <scene sceneID="BcQ-ug-3R1">
             <objects>
                 <tableViewController id="b0r-CF-A9N" customClass="AlarmDetailTableViewController" customModule="Alarm" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zpG-rp-6Y8">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zpG-rp-6Y8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kAd-8U-8ST">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kAd-8U-8ST" id="fwv-B6-y35">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <sections>
+                            <tableViewSection headerTitle="Section-1" id="Lf9-yL-G2N">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="kAd-8U-8ST">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kAd-8U-8ST" id="fwv-B6-y35">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Oy0-79-qZe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="517790826.89792502">
+                                                        <!--2017-05-29 22:47:06 +0000-->
+                                                    </date>
+                                                </datePicker>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Oy0-79-qZe" secondAttribute="bottom" id="Fkk-cI-iX6"/>
+                                                <constraint firstItem="Oy0-79-qZe" firstAttribute="leading" secondItem="fwv-B6-y35" secondAttribute="leading" id="Ved-PU-Dd3"/>
+                                                <constraint firstItem="Oy0-79-qZe" firstAttribute="top" secondItem="fwv-B6-y35" secondAttribute="top" id="ZEb-6S-1Zp"/>
+                                                <constraint firstAttribute="trailing" secondItem="Oy0-79-qZe" secondAttribute="trailing" id="gPn-cl-2ov"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Section-2" id="FA0-5m-CP9">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="j0T-uK-aWY">
+                                        <rect key="frame" x="0.0" y="206" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j0T-uK-aWY" id="dxq-CT-tcK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rise and Shine" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7dz-Iw-FYd">
+                                                    <rect key="frame" x="8" y="8" width="359" height="28"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="7dz-Iw-FYd" secondAttribute="bottom" id="8iz-ci-JXi"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7dz-Iw-FYd" secondAttribute="trailing" id="JvO-0b-shE"/>
+                                                <constraint firstItem="7dz-Iw-FYd" firstAttribute="top" secondItem="dxq-CT-tcK" secondAttribute="topMargin" id="SQE-kg-9LI"/>
+                                                <constraint firstItem="7dz-Iw-FYd" firstAttribute="leading" secondItem="dxq-CT-tcK" secondAttribute="leadingMargin" id="uSs-1Q-BEr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Section-3" id="ior-sj-k6u">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3KQ-V1-Nzl">
+                                        <rect key="frame" x="0.0" y="278" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3KQ-V1-Nzl" id="eNy-4Y-vex">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCs-V1-Mp9">
+                                                    <rect key="frame" x="8" y="8" width="359" height="28"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <state key="disabled" title="Disabled"/>
+                                                    <connections>
+                                                        <action selector="enableButtonTapped:" destination="b0r-CF-A9N" eventType="touchUpInside" id="YEo-6c-x89"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bCs-V1-Mp9" firstAttribute="top" secondItem="eNy-4Y-vex" secondAttribute="topMargin" id="CW8-4b-1Rd"/>
+                                                <constraint firstItem="bCs-V1-Mp9" firstAttribute="leading" secondItem="eNy-4Y-vex" secondAttribute="leadingMargin" id="KFf-8a-CuB"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="bCs-V1-Mp9" secondAttribute="bottom" id="nVD-t6-3f9"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="bCs-V1-Mp9" secondAttribute="trailing" id="te1-fS-eU6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="b0r-CF-A9N" id="Je0-Iq-sAk"/>
                             <outlet property="delegate" destination="b0r-CF-A9N" id="sof-H8-4TD"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Rise and Shine" id="CNP-vI-cHr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hhL-iy-NFu">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="b0r-CF-A9N" id="YP0-NO-Wig"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="enableButton" destination="bCs-V1-Mp9" id="s4Q-Zh-JO1"/>
+                        <outlet property="noteTextField" destination="7dz-Iw-FYd" id="iH4-U3-29g"/>
+                        <outlet property="timeDatePicker" destination="Oy0-79-qZe" id="NrI-H9-JHX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lo8-cn-Epz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2057" y="149"/>
+            <point key="canvasLocation" x="2056.8000000000002" y="148.87556221889056"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="a1O-9j-dfV">
