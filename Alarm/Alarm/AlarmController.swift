@@ -18,6 +18,11 @@ class AlarmController {
     
     var alarms: [Alarm] = []
     
+    var mockAlarms:[Alarm] {
+        //FIXME: - Add More Mock Data
+        return [Alarm(fireTimeFromMidnight: 2.0, name: "test")]
+    }
+    
     
     //MARK: - Create, Update, Delete
     
@@ -39,5 +44,11 @@ class AlarmController {
         alarms.remove(at: index)
     }
     
+    
+    //MARK: - Initializers
+    
+    init() {
+        self.alarms = self.mockAlarms
+    }
     
 }

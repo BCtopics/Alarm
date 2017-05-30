@@ -55,7 +55,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="alarmSwitch" destination="3Xc-9W-hFT" id="0bC-oq-xGR"/>
+                                    <outlet property="alarmSwitch" destination="2KY-OQ-acP" id="lqV-sE-PAZ"/>
                                     <outlet property="nameLabel" destination="1xg-2H-agR" id="q3R-uj-7l8"/>
                                     <outlet property="timeLabel" destination="3S9-MH-h0a" id="4TT-bu-twj"/>
                                     <segue destination="b0r-CF-A9N" kind="show" id="kkb-yl-oDw"/>

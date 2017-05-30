@@ -9,12 +9,24 @@
 import UIKit
 
 class SwitchTableViewCell: UITableViewCell {
+    
+    //MARK: - Internal Properties
+    
+    var alarm: Alarm? {
+        didSet {
+            timeLabel.text = alarm?.fireTimeAsString
+            nameLabel.text = alarm?.name
+            alarmSwitch.isOn = (alarm?.enabled)! //FIXME: - Fix this force unwrapp
+        }
+    }
 
     //MARK: - IBOutlets
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var alarmSwitch: NSLayoutConstraint!
+//    @IBOutlet weak var alarmSwitch: NSLayoutConstraint!  // Where did this come from?
+    
+    @IBOutlet weak var alarmSwitch: UISwitch!
     
     //MARK: - IBActions
     
