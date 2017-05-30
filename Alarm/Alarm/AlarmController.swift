@@ -51,4 +51,26 @@ class AlarmController {
         self.alarms = self.mockAlarms
     }
     
+    
+    func toggleEnabled(for alarm: Alarm) {
+        if alarm.enabled {
+            alarm.enabled = false
+        } else {
+            alarm.enabled = true
+        }
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

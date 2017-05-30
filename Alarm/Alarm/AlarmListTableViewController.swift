@@ -8,10 +8,20 @@
 
 import UIKit
 
-class AlarmListTableViewController: UITableViewController {
+class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDelegate {
+    
+    
+    func switchCellSwitchValueChanged(cell: SwitchTableViewCell) {
+        
+        guard let alarm = cell.alarm else { return }
+        AlarmController.shared.toggleEnabled(for: alarm)
+        self.tableView.reloadData()
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
     // MARK: - Table view data source
@@ -43,22 +53,6 @@ class AlarmListTableViewController: UITableViewController {
             
         }    
     }
-    
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     /*
     // MARK: - Navigation

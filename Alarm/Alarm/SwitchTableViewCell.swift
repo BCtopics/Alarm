@@ -12,6 +12,8 @@ class SwitchTableViewCell: UITableViewCell {
     
     //MARK: - Internal Properties
     
+    weak var delegate: SwitchTableViewCellDelegate?
+    
     var alarm: Alarm? {
         didSet {
             timeLabel.text = alarm?.fireTimeAsString
@@ -32,10 +34,16 @@ class SwitchTableViewCell: UITableViewCell {
     
     @IBAction func switchValueChanged(_ sender: Any) {
         
-        
+        if delegate != nil {
+            delegate?.switchCellSwitchValueChanged(cell: sender as! SwitchTableViewCell) //FIXME: - Fix bang
+        }
         
     }
     
+}
 
-
+protocol SwitchTableViewCellDelegate: class {
+    
+    func switchCellSwitchValueChanged(cell: SwitchTableViewCell)
+    
 }
