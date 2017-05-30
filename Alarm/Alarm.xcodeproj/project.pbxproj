@@ -16,6 +16,7 @@
 		6B12E2D61EDCD92D00CDB75C /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B12E2D51EDCD92D00CDB75C /* SwitchTableViewCell.swift */; };
 		6B7BED141EDE02F100A1BE41 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7BED131EDE02F100A1BE41 /* Alarm.swift */; };
 		6B7BED171EDE033C00A1BE41 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7BED161EDE033C00A1BE41 /* DateHelper.swift */; };
+		6B7BED1A1EDE03E200A1BE41 /* AlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7BED191EDE03E200A1BE41 /* AlarmController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		6B12E2D51EDCD92D00CDB75C /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		6B7BED131EDE02F100A1BE41 /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		6B7BED161EDE033C00A1BE41 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		6B7BED191EDE03E200A1BE41 /* AlarmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				6B12E2BC1EDCD7D200CDB75C /* AppDelegate.swift */,
 				6B7BED161EDE033C00A1BE41 /* DateHelper.swift */,
+				6B7BED181EDE03D400A1BE41 /* ModelControllers */,
 				6B7BED151EDE02F600A1BE41 /* Models */,
 				6B12E2D41EDCD91700CDB75C /* Views */,
 				6B12E2CE1EDCD7DE00CDB75C /* ViewControllers */,
@@ -106,6 +109,14 @@
 				6B7BED131EDE02F100A1BE41 /* Alarm.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		6B7BED181EDE03D400A1BE41 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6B7BED191EDE03E200A1BE41 /* AlarmController.swift */,
+			);
+			name = ModelControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +198,7 @@
 				6B7BED171EDE033C00A1BE41 /* DateHelper.swift in Sources */,
 				6B12E2BD1EDCD7D200CDB75C /* AppDelegate.swift in Sources */,
 				6B12E2D11EDCD87F00CDB75C /* AlarmListTableViewController.swift in Sources */,
+				6B7BED1A1EDE03E200A1BE41 /* AlarmController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
