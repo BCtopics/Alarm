@@ -9,31 +9,18 @@
 import UIKit
 
 class AlarmDetailTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        if alarm != nil {
+            updateViews()
+        }
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 0
     }
 
@@ -107,5 +94,46 @@ class AlarmDetailTableViewController: UITableViewController {
     @IBAction func saveButtonTapped(_ sender: Any) {
     }
     
+    //MARK: - Internal Properties
+    
+    var alarm: Alarm? {
+        didSet {
+            //FIXME: - Need to add a check to see if viewhasloaded
+            updateViews()
+        }
+    }
+    
+    //MARK: - UpdateViews()
+    
+    private func updateViews() {
+        
+        if alarm != nil {
+            
+        timeDatePicker.date = (alarm?.fireDate)! //FIXME: - Check on this later / Confirm It's right
+        noteTextField.text = alarm?.name
+        
+            if (alarm?.enabled)! { //FIXME: - Bang Operator
+                enableButton.setTitle("Disabled", for: .normal)
+            } else {
+                enableButton.setTitle("Enable", for: .normal)
+            }
+            
+        } else {
+            enableButton.isHidden = true
+        }
+        
+        
+        
+    }
+    
+
 
 }
+
+
+
+
+
+
+
+
