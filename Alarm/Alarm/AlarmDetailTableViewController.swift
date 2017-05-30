@@ -15,71 +15,11 @@ class AlarmDetailTableViewController: UITableViewController {
         
         if alarm != nil {
             updateViews()
+        } else {
+            enableButton.isHidden = true
         }
     }
 
-    // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    
     //MARK: - IBOutlets
     
     @IBOutlet weak var enableButton: UIButton!
@@ -96,34 +36,39 @@ class AlarmDetailTableViewController: UITableViewController {
     
     //MARK: - Internal Properties
     
-    var alarm: Alarm? {
-        didSet {
-            //FIXME: - Need to add a check to see if viewhasloaded
-            updateViews()
-        }
-    }
+    var alarm: Alarm?
+//    {
+//        didSet {
+//            //FIXME: - Need to add a check to see if viewhasloaded
+//            updateViews()
+//        }
+//    }
     
     //MARK: - UpdateViews()
     
     private func updateViews() {
         
-        if alarm != nil {
-            
-        timeDatePicker.date = (alarm?.fireDate)! //FIXME: - Check on this later / Confirm It's right
-        noteTextField.text = alarm?.name
-        
-            if (alarm?.enabled)! { //FIXME: - Bang Operator
-                enableButton.setTitle("Disabled", for: .normal)
-            } else {
-                enableButton.setTitle("Enable", for: .normal)
-            }
-            
-        } else {
-            enableButton.isHidden = true
+        guard let alarm = alarm,
+            let thisMorningAtMidnight = DateHelper.thisMorningAtMidnight,
+            isViewLoaded else {
+                return
         }
         
+        timeDatePicker.setDate(Date(timeInterval: alarm.fireTimeFromMidnight, since: thisMorningAtMidnight), animated: false) // We are getting these times from the alarm. and the DateHelper
+        noteTextField.text = alarm.name
         
+        enableButton.isHidden = false
+        if alarm.enabled {
+            enableButton.setTitle("Disable", for: UIControlState())
+            enableButton.setTitleColor(.white, for: UIControlState())
+            enableButton.backgroundColor = .red
+        } else {
+            enableButton.setTitle("Enable", for: UIControlState())
+            enableButton.setTitleColor(.blue, for: UIControlState())
+            enableButton.backgroundColor = .gray
+        }
         
+        self.title = alarm.name
     }
     
 

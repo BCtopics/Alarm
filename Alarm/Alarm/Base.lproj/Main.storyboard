@@ -58,7 +58,7 @@
                                     <outlet property="alarmSwitch" destination="2KY-OQ-acP" id="lqV-sE-PAZ"/>
                                     <outlet property="nameLabel" destination="1xg-2H-agR" id="q3R-uj-7l8"/>
                                     <outlet property="timeLabel" destination="3S9-MH-h0a" id="4TT-bu-twj"/>
-                                    <segue destination="b0r-CF-A9N" kind="show" id="kkb-yl-oDw"/>
+                                    <segue destination="b0r-CF-A9N" kind="show" identifier="toDetailSegue" id="kkb-yl-oDw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -88,7 +88,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection headerTitle="Section-1" id="Lf9-yL-G2N">
+                            <tableViewSection headerTitle="Time" id="Lf9-yL-G2N">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="kAd-8U-8ST">
                                         <rect key="frame" x="0.0" y="28" width="375" height="150"/>
@@ -114,7 +114,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Section-2" id="FA0-5m-CP9">
+                            <tableViewSection headerTitle="Alarm Message" id="FA0-5m-CP9">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="j0T-uK-aWY">
                                         <rect key="frame" x="0.0" y="206" width="375" height="44"/>
@@ -140,7 +140,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Section-3" id="ior-sj-k6u">
+                            <tableViewSection headerTitle="Enable/Disable" id="ior-sj-k6u">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3KQ-V1-Nzl">
                                         <rect key="frame" x="0.0" y="278" width="375" height="44"/>
